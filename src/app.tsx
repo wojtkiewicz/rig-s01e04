@@ -10,6 +10,24 @@ import { StatusBoard } from './views/status.js';
 export function createApp(config: RigConfig = loadConfig()) {
   const app = new Hono();
 
+  app.get('/api/digest/:night', (c) => {
+    const night = c.req.param('night');
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(night)) {
+      return c.json({ error: 'Night not found' }, 404);
+    }
+
+    try {
+      const digest = readNight(config.runsDir, night);
+      const rows = [...digest.rows].sort((a, b) => a.job.localeCompare(b.job));
+      return c.json({ ...digest, rows });
+    } catch (error) {
+      if (error instanceof Error && 'code' in error && error.code === 'ENOENT') {
+        return c.json({ error: 'Night not found' }, 404);
+      }
+      throw error;
+    }
+  });
+
   app.get('/health', (c) => c.json({ ok: true, lane: lane().id }));
 
   app.get('/', (c) =>
