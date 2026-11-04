@@ -1,8 +1,9 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
+closed: 2026-11-04
 ---
 
 # Morning digest
@@ -77,3 +78,15 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+| # | Issue | Blocked by | Worker | Closed |
+|---|-------|-----------|--------|--------|
+| 1 | [Run log reader](https://github.com/wojtkiewicz/rig-s01e04/issues/1) | — | OpenCode · GPT-6 Luna · medium | 2026-11-04 |
+| 2 | [Digest page: GET /digest/:night](https://github.com/wojtkiewicz/rig-s01e04/issues/2) | #1 | OpenCode · GPT-6 Luna · medium | 2026-11-04 |
+| 3 | [Digest JSON: GET /api/digest/:night](https://github.com/wojtkiewicz/rig-s01e04/issues/3) | #1 | OpenCode · GPT-6 Luna · medium | 2026-11-04 |
+| 4 | [Link nights from the status board](https://github.com/wojtkiewicz/rig-s01e04/issues/4) | #1 | OpenCode · GPT-6 Luna · medium | 2026-11-04 |
+| 5 | [Test digest routes](https://github.com/wojtkiewicz/rig-s01e04/issues/5) | #1 | OpenCode · GPT-6 Luna · medium | 2026-11-04 |
+| 6 | [Publish morning digest preview](https://github.com/wojtkiewicz/rig-s01e04/issues/6) | #2 | OpenCode · GPT-6 Luna · medium | 2026-11-04 |
+| 7 | [Remove preview marker and archive plan](https://github.com/wojtkiewicz/rig-s01e04/issues/7) | #6 | OpenCode · GPT-6 Luna · medium | 2026-11-04 |
